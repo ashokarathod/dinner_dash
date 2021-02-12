@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Users", users_path, class: "nav-link"%>
+        <%= link_to "Users and Orders", users_path, class: "nav-link"%>
       </li>
       <li class="nav-item dropdown">
         <div class="dropdown show">
@@ -19,7 +19,7 @@
             <div class="dropdown-divider"></div>
             <%= link_to 'View Recipe', items_path, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
-            <%= link_to "About", 'https://www.google.co.in/', class: 'dropdown-item'%>
+            <%= link_to "About", 'https://github.com/andela/dinner-dash-rails', class: 'dropdown-item'%>
           </div>
         </div>
       </li>
@@ -31,6 +31,8 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <div class="dropdown-divider"></div>
             <%= link_to 'View categories', categories_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to 'Create Category', new_category_url, class: 'dropdown-item' %>
         </div>
       </li>
     </ul>

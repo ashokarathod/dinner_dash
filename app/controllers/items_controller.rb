@@ -22,6 +22,25 @@ class ItemsController < ApplicationController
           render 'new'
         end
     end
+    
+    def edit
+
+    end
+
+    def update
+       if @item.update(item_params)
+          flash[:success] = "Item Updated successfully.."
+          redirect_to items_path
+       else
+        render action: :edit
+       end
+    end
+
+    def destroy
+        @item.destroy
+        flash[:notice] = 'Successfully deleted.'
+        redirect_to items_path
+    end
 
     private
 

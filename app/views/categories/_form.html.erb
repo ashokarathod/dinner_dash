@@ -1,0 +1,26 @@
+<div class= 'container'>
+  <div class= 'row justify-content-center'>
+    <div class= 'col-12'>
+      <%= render "shared/errors", obj: @category %>
+      <%= form_with(model: @category, class: 'shadow p-3 mb-3 bg-info rounded', local: true) do |f| %>
+        <div class= 'form-group row'>
+          <%= f.label :title, "Category name", class: 'col-2 col-form-label text-light '%> 
+          <div class= 'col-10'>
+            <%= f.text_field :title, class: 'form-control', placeholder: "Enter category name"%>
+          </div>
+        </div>
+        <div class= 'form-group row'>
+          <%= f.label :description, "Category Description", class: 'col-2 col-form-label text-light '%> 
+          <div class= 'col-10'>
+            <%= f.text_field :description, class: 'form-control', placeholder: "Enter category description"%>
+          </div>
+        </div>
+
+        <div class= "form-group row justify-content-center">
+          <%= f.submit class: "btn btn-outline-light btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to '[Cancel and return to category listing]', categories_path, class: 'text-info'%></p>
+  </div> 
+</div>
