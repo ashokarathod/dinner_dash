@@ -35,6 +35,35 @@
             <%= link_to 'Create Category', new_category_url, class: 'dropdown-item' %>
         </div>
       </li>
+      <% if logged_in? %>
+        <li class="nav-item dropdown">
+          <div class="dropdown show">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= "(Admin)" if current_user.admin? %> profile [<%= current_user.name %>]
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="dropdown-divider"></div>
+              <%= link_to 'View your profile', user_path(current_user), class: 'dropdown-item' %>
+              <div class="dropdown-divider"></div>
+              <%= link_to 'Edit your profile', edit_user_path(current_user),  class: 'dropdown-item' %>
+              <% if current_user.admin?%>
+              <div class="dropdown-divider"></div>
+                <%= link_to 'Delete your account', user_path(current_user), method: :delete, class: 'dropdown-item text-danger' %>
+              <%end%>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Log in', login_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign up', signup_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0", action="/search">
       <input class="form-control mr-sm-2", name="q", type="" placeholder="Search" aria-label="Search">

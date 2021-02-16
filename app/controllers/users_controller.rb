@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def index
       @users = User.all
-      respond_to do |format|
-        format.html
-        format.json {render json: @users}
-      end
   end
 
   def edit
@@ -56,4 +54,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password)
   end
+
+  def require_same_user
+    if current_user!= @user && !current_user.admin
+      flash[:warning] = "user not right authorized user"
+      redirect_to users_path
+    end
+  end
+
 end

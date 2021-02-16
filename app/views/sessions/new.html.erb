@@ -1,0 +1,27 @@
+<h1 class= 'text-center' mt-4> Login page</h1>
+
+<div class= 'container'>
+  <div class= 'row justify-content-center'>
+    <div class= 'col-12'>
+      <%= form_with(scop: :session, url: login_path, class: 'shadow p-3 mb-3 bg-info rounded', local: true) do |f| %>
+        <div class= 'form-group row'>
+          <%= f.label :email, class: 'col-2 col-form-label text-light' %>
+          <div class= 'col-10'>
+            <%= f.email_field :email, rows: 10, class: 'form-control', placeholder: "Enter your email"%>
+          </div>
+        </div>
+        <div class= 'form-group row'>
+          <%= f.label :password, class: 'col-2 col-form-label text-light' %>
+          <div class= 'col-10'>
+            <%= f.password_field :password, class: 'form-control', placeholder: "Eneter your password"%>
+          </div>
+        </div>
+
+        <div class= "form-group row justify-content-center">
+          <%= f.submit "login", class: "btn btn-outline-light btn-lg" %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to '[Cancel and return to users listing]', users_path, class: 'text-info'%></p>
+  </div> 
+</div>
