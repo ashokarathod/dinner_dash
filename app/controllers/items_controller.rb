@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
     before_action  :set_item, only: [:show, :edit, :update, :destroy]
 
     def show
-        @category_title =  Category.find(params[:id])
+        @category = Category.find(params[:id])
     end
   
     def index
