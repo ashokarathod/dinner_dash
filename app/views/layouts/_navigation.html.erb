@@ -68,9 +68,11 @@
           <%= link_to 'Sign up', signup_path, class: "nav-link" %>
         </li>
       <% end %>
-      <li class="nav-item">
-        <%= link_to "Carts", carts_path, class: "nav-link"%>
-      </li>
+      <% if logged_in? %>
+        <li class="nav-item">
+          <%= link_to "Carts", carts_path, class: "nav-link"%>
+        </li>
+      <% end %>
     </ul>
     <form class="form-inline my-2 my-lg-0", action="/search">
       <input class="form-control mr-sm-2", name="q", type="" placeholder="Search" aria-label="Search">
