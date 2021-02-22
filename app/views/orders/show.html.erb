@@ -1,0 +1,19 @@
+<h1 class= 'text-center' mt-4> <%= @order.transaction_id %></h1>
+<div class= 'row justify-content-md-center'>
+  <div class= 'col-8 mt-4'>
+    <div class="card text-center shadow mb-3 rounded">
+      <div class="card-header font-italic">
+      </div>
+      <div class="card-body">
+        <p class="card-text"><%= @order.status%></p>
+        <% if logged_in? && current_user.admin? %>
+          <a> <%= link_to "Edit", edit_order_path(@order),class: "btn btn-outline-info"%></a>
+          <a> <%= link_to 'Delete', order_path(@order), method: :delete, data: { confirm: "are you sure?"}, class: "btn btn-outline-danger" %></a>
+        <% end %>
+      </div>
+      <div class="card-footer text-muted">
+        <span>created at: <%= time_ago_in_words(@order.created_at)%></span> |
+        <span>updated_at: <%= time_ago_in_words(@order.updated_at)%></span>
+      </div>
+    </div>
+  </div>
