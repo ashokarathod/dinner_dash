@@ -44,6 +44,10 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
+  def search
+    @items = Item.where("name LIKE ?", "%" + params[:q] + "%")
+  end
+
   private
 
   def set_item
