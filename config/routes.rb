@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   #end
   resources :categories
   get 'signup', to: 'users#new'
+  get 'carts', to: 'carts#index'
   #post 'users', to: 'users#create'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
