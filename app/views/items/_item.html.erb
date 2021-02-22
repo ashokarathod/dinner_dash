@@ -18,9 +18,11 @@
               <span>created at: <%= time_ago_in_words(item.created_at)%></span> |
               <span>updated_at: <%= time_ago_in_words(item.updated_at)%></span>
             </div>
-            <div class="card-footer text-muted">
-              <button type="button" class="btn btn-secondary">Add to Cart</button>
-            </div>
+            <% if logged_in? %>
+              <div class="card-footer text-muted">
+                <button type="button" class="btn btn-secondary">Add to Cart</button>
+              </div>
+            <% end %>
           </div>
         </div>
     </div>

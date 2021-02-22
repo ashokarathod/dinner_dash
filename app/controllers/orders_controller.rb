@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
   end
 
   # def search
-  #   @orders = Order.where("name LIKE ?", "%" + params[:q] + "%")
+  #   @orders = Order.where("status LIKE ?", "%" + params[:q] + "%")
   # end
 
   private

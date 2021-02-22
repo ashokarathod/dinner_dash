@@ -1,7 +1,7 @@
 .navbar {
   background-color: rgb(26, 24, 25) !important;
-}  
-  
+}
+
 .nav-link {
   color: rgb(243, 227, 235) !important;
 }
@@ -16,8 +16,9 @@
   margin-top: 25px;
 }
 .jumbotron {
-  background-image: asset-url('jambo-coy.jpg');
-  //background-color: #cccccc;
+  //background-image: url("D:\Feb_rails_pro\dinner_dash\app\assets\images\home_image.jpg");
+  background-image: url("home_image.jpg");
+  //background-color: #ee0e0e;
 }
 html,
 body {
@@ -27,8 +28,18 @@ body {
 #page-content {
   flex: 1 0 auto;
   // background-color: rgb(169, 185, 240);
-  background-color: rgb(218, 212, 215) !important;
+  background-color: rgb(199, 193, 196) !important;
+
 }
+
+#page-content-background-img {
+  flex: 1 0 auto;
+  // background-color: rgb(169, 185, 240);
+  background-image: url("home3.jpg");
+  background-size: 90%;
+
+}
+
 
 #sticky-footer {
   flex-shrink: none;
